@@ -95,6 +95,9 @@ function dataType (value) {
   if (value['anyOf'] || value['allOf'] || value['oneOf']) {
     return ''
   }
+  if (value["const"]) {
+    return `"${value["const"]}"`;
+  }
   if (!value.type) {
     return 'object'
   }
